@@ -1,0 +1,23 @@
+{
+  "name": "johnmusic",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/johnabyner/johnMusic#readme",
+  "bugs": {
+    "url": "https://github.com/johnabyner/johnMusic/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnabyner/johnMusic.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "scripts": {
+    "build:frontend": "npm --prefix frontend run build",
+    "start:electron": "npm --prefix electron run start",
+    "start": "npm run build:frontend && npm run start:electron",
+
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
