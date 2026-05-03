@@ -1,0 +1,26 @@
+.navBar {
+    display: flex;
+    width: 100%;
+
+    font-size: 1.6em;
+    border-bottom: 1px solid;
+}
+
+.navBarLeft,
+.navBarCenter,
+.navBarRight {
+    flex: 1;
+
+}
+
+.navBarLeft {
+    justify-content: flex-start;
+}
+
+.navBarCenter {
+    justify-content: center;
+}
+
+.navBarRight {
+    justify-content: flex-end;
+}

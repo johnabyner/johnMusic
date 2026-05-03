@@ -1,0 +1,1 @@
+import { getArtists, getIDArtist, getIDAlbum } from '../services/InformationMusic.js';

@@ -1,25 +1,32 @@
-import './css/App.css';
+import './css/App.module.css';
 
-import {useMusic} from './hooks/useMusic.js';
+import {SearchProvider} from './context/searchContext.jsx';
 
-import MusicInput from './components/MusicInput.jsx';
-import MusicList  from './components/MusicList.jsx';
+import { Routes, Route } from 'react-router-dom';
 
+import NavBar from './components/NavBar.jsx';
 
-//pesquisar
-//enviar para spotifyAPI
-//enviar para ytSearch
+import Home from './pages/Home.jsx';
+import Artist from './pages/Artist.jsx';
+
 
 function App() {
-  const { musics, addMusic} = useMusic();
 
   return (
     <>
-      <h1>JohnMusic</h1>
-      <MusicInput onSend={addMusic}/>
-      <MusicList musics={musics}/>
+     <SearchProvider>
+        <NavBar/>
+
+        <main className='main-content'>
+          <Routes>
+              <Route path='/' element={<Home/>} />
+              <Route path='/artist' element={<Artist/>} />
+          </Routes>
+        </main>
+      </SearchProvider>
     </>
   )
 }
 
 export default App;
+
