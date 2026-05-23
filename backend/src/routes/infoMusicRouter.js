@@ -3,19 +3,16 @@ const router = express.Router();
 
 
 //GET
-//ARTIST
 import manyArtistController from '../controllers/manyArtistsController.js';
 import artistController from "../controllers/artistController.js";
 
-router.get('/artists/:name', manyArtistController); 
-router.get('/artist/:id', artistController);
+//import discographyController from '../controllers/discographyController.js';
 
-//ALBUM
-// router.get('/', ); 
+//ARTIST
+router.get('/artists/:name', manyArtistController); //many artists
+router.get('/artist/:id', artistController); //informations of a unique artists
 
-//TRACK
-// router.get('/', );
-// router.get('/', );
+//DISCOGRAPHY
 
 export default router;
 

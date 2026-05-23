@@ -1,0 +1,22 @@
+.artistCard{
+    background-color: #424661;
+    margin: 1em;
+    border-radius: 10px;
+}
+.artistCard:hover{
+    background-color: #686699;
+}
+
+img{
+    text-align: center;
+    border-radius: 5px;
+}
+img:hover{
+    cursor: pointer;
+
+}
+
+p{
+    margin: 0.2em;
+    font-size: 1.3em;
+}

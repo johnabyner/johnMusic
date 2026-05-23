@@ -1,3 +1,5 @@
+import InfoNormalize from "./InfoNormalize.js";
+
 class FetchArtist{
     constructor(){
         this.BASE_URL = "https://api.deezer.com";
@@ -15,8 +17,9 @@ class FetchArtist{
                 throw new error('HTTP', response.status);
             }
 
-            const data = response.json();
-            return data;
+            const data = await response.json();
+            const dataFiltered = InfoNormalize.filterManyProfiles(data);
+            return dataFiltered;
         }catch(e){
             console.log("ERROR IN FETCH ARTISTS", e);
             throw e;
@@ -24,23 +27,23 @@ class FetchArtist{
     }
 
 
-    //https://api.deezer.com/artist/27
-    async fetchIDArtist(idArtist){ //will search the artist matching with id
-        const artist = await fetch(`${this.BASE_URL}/lookup?id=${idArtist}&entity=artist`);
-        const data = await artist.json();
+    //https://api.deezer.com/artist/51743872
+    async fetchProfileArtist(idArtist){ //will search the artist matching with id
+        const url = (`${this.BASE_URL}/artist/${idArtist}`);
+        console.log(url);
 
         try{
-            const url = `${this.BASE_URL}/artist/${idArtist}`
             const response = await fetch(url);
             
             if(!response.ok){
                 throw new error('HTTP', response.status)
             }
 
-            const data = response.json();
-            return data;
+            const data = await response.json();
+            const dataFiltered = InfoNormalize.filterProfile(data);
+            return dataFiltered;
         }catch(e){
-            console.log("ERROR IN FETCH ARTIST", e);
+            console.log("ERROR IN FETCH ARTIST PROFILE", e);
             throw e;
         }
     }

@@ -1,8 +1,7 @@
-import './css/App.module.css';
-
 import {SearchProvider} from './context/searchContext.jsx';
-
 import { Routes, Route } from 'react-router-dom';
+
+import './css/Global.css';
 
 import NavBar from './components/NavBar.jsx';
 
@@ -20,7 +19,7 @@ function App() {
         <main className='main-content'>
           <Routes>
               <Route path='/' element={<Home/>} />
-              <Route path='/artist' element={<Artist/>} />
+              <Route path='/artist/:artistId' element={<Artist/>} />
           </Routes>
         </main>
       </SearchProvider>

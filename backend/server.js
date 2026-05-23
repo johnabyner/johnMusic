@@ -1,11 +1,9 @@
+//for load env variables
 import 'dotenv/config';
-
-// import dns from "dns";
-// dns.setDefaultResultOrder("ipv4first");
 
 import app from './src/app.js';
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT;
 
 app.listen(PORT, () => {
     console.log(`acessar: http://localhost:${PORT}`);

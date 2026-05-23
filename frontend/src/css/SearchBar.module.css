@@ -1,10 +1,20 @@
 .searchBar{
+    background-color: #7a6289;
+
     text-align: center;
 
-    font-size: 0.6em;
-    width: 100%;
-
-    
-
+    font-size: 0.7em;
+    width: 90%;
+  
     border-radius: 20px;
+    margin: 0.2em;
+}
+
+.searchIcon{
+  size:20 ;
+  Width: 1.5;
+}
+
+input::placeholder {
+  color: rgb(31, 29, 29);
 }

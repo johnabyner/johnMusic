@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from "react";
 
-import { fetchArtist } from "../services/fetchJohnMusic";
+import { fetchArtists } from "../services/fetchJohnMusic";
 
 const SearchContext = createContext();
 
@@ -9,9 +9,9 @@ function SearchProvider({ children }){
 
     const searchArtist = async  (input) => {
         if(input.trim() !== ''){ //if is diferent of void
-            const information = await fetchArtist(input); //will ask the information for the backend
+            const information = await fetchArtists(input); //will ask the information for the backend
             
-            setArtist(information.data); //will set de input for prev
+            setArtist(information); //will set de input for prev
         }
     };
 
