@@ -2,18 +2,19 @@ import styles from '../css/SearchBar.module.css';
 import { Search } from 'lucide-react';
 import {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
-import {useSearchContext} from '../context/searchContext.jsx'
+import {useSearchStore} from '../context/searchContext.jsx'
 
 
 function SearchBar(){
-    const { searchArtist } = useSearchContext();
     const [value, setValue ] = useState('');
+    const searchArtist = useSearchStore((state) => state.searchArtist);
+
     const Navigate = useNavigate();
 
     const handleSubmit = (e) => { //will handle the input
         e.preventDefault(); 
 
-        searchArtist(value)
+        searchArtist(value) //will search the value
         Navigate('/');
         setValue(''); //will reset de camp
     }

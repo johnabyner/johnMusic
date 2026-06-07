@@ -1,0 +1,23 @@
+.head{
+    background-color: #43364c;
+    margin: 0.5em;
+    border-radius: 5px;
+
+}
+
+h2{
+    margin-left: 1.2em;
+    color: rgba(178, 177, 219, 0.82);
+}
+
+.link{
+    color: rgba(200, 199, 227, 0.82);
+    text-decoration:solid;
+    
+    font-size: 1.8em;
+    margin-right:2em;
+
+    display: flex;
+    justify-content: end;
+    
+}

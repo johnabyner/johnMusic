@@ -1,9 +1,9 @@
 import ArtistGrid from '../components/ArtistGrid.jsx';
 
-import { useSearchContext } from '../context/searchContext.jsx';
+import { useSearchStore } from '../context/searchContext.jsx';
 
 function Home(){
-    const { artists } = useSearchContext();
+    const artists = useSearchStore((state) => (state.artists));
     
     return(
         <>

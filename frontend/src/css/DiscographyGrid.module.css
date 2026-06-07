@@ -1,0 +1,20 @@
+.sectionDiscography{
+    background-color: #2d2c37;
+    border-radius: 5px;
+}
+
+
+
+h1{
+    margin-left: 1em;
+    color: rgba(168, 167, 200, 0.82);
+
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    margin: 1em;
+
+}

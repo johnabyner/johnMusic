@@ -1,4 +1,3 @@
-import {SearchProvider} from './context/searchContext.jsx';
 import { Routes, Route } from 'react-router-dom';
 
 import './css/Global.css';
@@ -13,7 +12,6 @@ function App() {
 
   return (
     <>
-     <SearchProvider>
         <NavBar/>
 
         <main className='main-content'>
@@ -22,7 +20,6 @@ function App() {
               <Route path='/artist/:artistId' element={<Artist/>} />
           </Routes>
         </main>
-      </SearchProvider>
     </>
   )
 }

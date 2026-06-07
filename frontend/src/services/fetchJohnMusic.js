@@ -14,4 +14,4 @@ async function fetchProfileArtist(id){
 
 
 
-export {fetchArtist};
+export {fetchArtists, fetchProfileArtist};

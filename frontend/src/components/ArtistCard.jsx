@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 
-import styles from '../css/ArtistCard.module.css'
+import styles from '../css/ArtistCard.module.css';
 
 function ArtistCard ({ artist }) { 
     const navigate = useNavigate();
