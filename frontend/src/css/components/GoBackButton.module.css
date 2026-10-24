@@ -1,0 +1,35 @@
+.goBackButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    margin: 1rem 1.25rem;
+    padding: 0.65rem 1rem;
+
+    background: #26212c;
+    color: #e8dff0;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color 180ms ease,
+        color 180ms ease,
+        transform 180ms ease;
+}
+
+.goBackButton:hover {
+    background: #392b43;
+    color: #fff;
+    transform: translateX(-3px);
+}
+
+.goBackButton:focus-visible {
+    outline: 2px solid #c69be8;
+    outline-offset: 3px;
+}

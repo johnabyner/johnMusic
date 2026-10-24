@@ -6,6 +6,8 @@ import ProfileHead from '../components/profile/ProfileHead.jsx';
 import Discography from '../components/profile/Discography.jsx';
 import { useEffect } from "react";
 
+import GoBackButton from "@/components/GoBackButton.jsx";
+
 function Artist(){
     const {artistId} = useParams();   
     const searchArtistProfile = useProfileArtistContext((state) => (state.searchArtistInformation));
@@ -24,6 +26,7 @@ function Artist(){
 
     return(
         <>
+            <GoBackButton></GoBackButton>
             <ProfileHead profileHeadInformation={artistInformation[0]}/>
             <Discography discographyInformation={artistInformation[1]}/>
         </>

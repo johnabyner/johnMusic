@@ -1,4 +1,4 @@
-import styles from '../css/ArtistGrid.module.css'
+import styles from '../../css/artist/ArtistGrid.module.css'
 
 import ArtistCard from "./ArtistCard.jsx";
 

@@ -1,4 +1,4 @@
-import styles from '../../css/ProfileHead.module.css';
+import styles from '../../css/artist/ProfileHead.module.css';
 
 function ProfileHead({profileHeadInformation}){
     return <>

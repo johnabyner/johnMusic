@@ -1,4 +1,4 @@
-import ArtistGrid from '../components/ArtistGrid.jsx';
+import ArtistGrid from '../components/artist/ArtistGrid.jsx';
 
 import { useSearchStore } from '../context/searchContext.jsx';
 

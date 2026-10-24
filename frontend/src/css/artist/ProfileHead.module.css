@@ -1,0 +1,65 @@
+.ProfileHead {
+    display: flex;
+    align-items: flex-end;
+    gap: 1.5rem;
+
+    min-height: 220px;
+    margin: 1.25rem;
+    padding: clamp(1.25rem, 4vw, 3rem);
+
+    color: #fff;
+
+    background: linear-gradient(
+        135deg,
+        #493451 0%,
+        #29202f 55%,
+        #18151d 100%
+    );
+
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 18px;
+}
+
+.ProfileHead img {
+    display: block;
+    width: clamp(120px, 20vw, 200px);
+    aspect-ratio: 1 / 1;
+    flex-shrink: 0;
+
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.ProfileHead h1 {
+    margin: 0;
+    color: #fff;
+
+    font-size: clamp(1.8rem, 5vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.045em;
+}
+
+.ProfileHead p {
+    margin: 0.65rem 0 0;
+    color: #c8bdcf;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+    .ProfileHead {
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+
+        min-height: auto;
+        margin: 0.75rem;
+        padding: 1.5rem;
+    }
+
+    .ProfileHead img {
+        width: min(55vw, 180px);
+    }
+}

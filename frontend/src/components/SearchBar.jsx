@@ -1,4 +1,4 @@
-import styles from '../css/SearchBar.module.css';
+import styles from '../css/components/SearchBar.module.css';
 import { Search } from 'lucide-react';
 import {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -20,7 +20,7 @@ function SearchBar(){
     }
 
     return(
-        <form onSubmit={handleSubmit}>
+        <form  className={styles.searchForm} onSubmit={handleSubmit}>
             <input  
                 className={styles.searchBar}
                 
