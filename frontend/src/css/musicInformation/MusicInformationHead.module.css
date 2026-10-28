@@ -1,0 +1,104 @@
+.hero {
+    display: flex;
+    align-items: flex-end;
+    gap: 28px;
+    padding: 36px;
+    color: #fff;
+    background: linear-gradient(180deg, #454545 0%, #242424 100%);
+}
+
+.cover {
+    width: clamp(160px, 22vw, 240px);
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 8px 24px rgb(0 0 0 / 30%);
+}
+
+.information {
+    min-width: 0;
+}
+
+.type {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.title {
+    margin: 12px 0;
+    font-size: clamp(2rem, 5vw, 4.5rem);
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    overflow-wrap: anywhere;
+}
+
+.metadata {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    color: #ddd;
+    font-size: 0.875rem;
+}
+
+.metadata strong {
+    color: #fff;
+}
+
+.artistImage {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.dot {
+    color: #aaa;
+}
+
+.albumButton {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 22px 34px;
+    border: none;
+    border-radius: 24px;
+    background: #1ED760;
+    color: #121212;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.albumButton:hover {
+    background: #3BE477;
+    transform: scale(1.04);
+}
+
+.loading {
+    padding: 32px;
+    color: #b3b3b3;
+}
+
+@media (max-width: 600px) {
+    .hero {
+        align-items: center;
+        flex-direction: column;
+        padding: 24px 16px;
+        text-align: center;
+    }
+
+    .cover {
+        width: min(65vw, 220px);
+    }
+
+    .metadata {
+        justify-content: center;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+}

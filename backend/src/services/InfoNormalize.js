@@ -42,6 +42,40 @@ class InfoNormalize{
 
         return discographyFiltered;
     }
+
+    filterDiscographyHead(discographyData) {
+        const discographyHeadFiltered = {
+            id: discographyData.id,
+            title: discographyData.title,
+            cover_big: discographyData.cover_big,
+            release_date: discographyData.release_date,
+            record_type: discographyData.record_type,
+            nb_tracks: discographyData.nb_tracks,
+            artist: {
+                id: discographyData.artist.id,
+                name: discographyData.artist.name,
+                picture_medium: discographyData.artist.picture_medium
+            }
+        };
+
+        return discographyHeadFiltered;
+    }
+
+    filterDiscographyBody(discographyData) {
+        const musicListFiltered = [];
+
+        discographyData.tracks.data.forEach(element => {
+            musicListFiltered.push({
+                id: element.id,
+                title: element.title,
+                duration: element.duration,
+                track_position: element.track_position,
+                explicit_lyrics: element.explicit_lyrics,
+            });
+        });
+
+        return musicListFiltered;
+    }
 }
 
 export default new InfoNormalize();

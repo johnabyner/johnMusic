@@ -1,0 +1,102 @@
+.trackRow {
+    display: grid;
+    grid-template-columns: 40px minmax(0, 1fr) 80px;
+    align-items: center;
+    gap: 12px;
+    min-height: 64px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    color: #b3b3b3;
+    transition: background 150ms ease;
+}
+
+.trackRow:hover {
+    background: #2a2a2a;
+}
+
+.position {
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.trackInformation {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}.downloadButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 14px;
+    border-radius: 20px;
+    background-color: #1ed760;
+    color: #121212;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.downloadButton:hover {
+    background-color: #3be477;
+    transform: scale(1.04);
+}
+
+.unavailable {
+    color: #777;
+    font-size: 0.8rem;
+}
+.trackText {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    min-width: 0;
+}
+
+.trackTitle {
+    margin: 0;
+    color: #fff;
+    font-size: 0.95rem;
+    overflow-wrap: anywhere;
+}
+
+.explicit {
+    display: inline-grid;
+    place-items: center;
+    width: 16px;
+    height: 16px;
+    border-radius: 2px;
+    background: #555;
+    color: #ddd;
+    font-size: 0.65rem;
+    font-weight: 700;
+}
+
+.duration {
+    text-align: right;
+    font-size: 0.875rem;
+    font-variant-numeric: tabular-nums;
+}
+
+.trackRow audio {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .trackRow {
+        grid-template-columns: 28px minmax(0, 1fr) 56px;
+        gap: 8px;
+        padding-inline: 8px;
+    }
+
+    .trackInformation {
+        gap: 6px;
+    }
+
+    .trackTitle {
+        font-size: 0.875rem;
+    }
+}

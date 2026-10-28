@@ -1,6 +1,6 @@
 import FetchArtist from "../services/FetchArtist.js";
 import FetchDiscography from '../services/FetchDiscography.js';
-
+import InfoNormalize from "../services/InfoNormalize.js";
 
 async function artistController(req, res){
     try{
@@ -8,9 +8,10 @@ async function artistController(req, res){
         const Discography = new FetchDiscography();
 
         const idArtist = req.params.id; //will get the id from url
+        
         const dataArtist = await Artist.fetchProfileArtist(idArtist); //will do the fetch of profile
         const dataDiscography = await Discography.fetchDiscography(idArtist);
-
+        console.log('artists Loaded')
         res.json([dataArtist, dataDiscography]);
     }catch(e){
         console.log("ERROR IN ARTIST CONTROLLER ", e);
@@ -19,3 +20,4 @@ async function artistController(req, res){
 }
 
 export default artistController;
+

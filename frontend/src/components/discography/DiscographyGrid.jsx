@@ -5,7 +5,6 @@ function DiscographyGrid({discographyList,title}){
     if(!discographyList){
         return <p>Loading {title}...</p>
     }
-    console.log(discographyList);
 
     if(discographyList.length === 0){
         return <>

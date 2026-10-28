@@ -12,6 +12,15 @@ async function fetchProfileArtist(id){
     return data;
 };
 
+async function fetchDiscographyInformation(musicId){
+    const search = await fetch(`${import.meta.env.VITE_API_URL}/johnMusic/music/${musicId}`);
+    const data = await search.json();
 
+    return data;
+}
 
-export {fetchArtists, fetchProfileArtist};
+async function fetchDownloadMusic(){
+    return;
+}
+
+export {fetchArtists, fetchProfileArtist, fetchDiscographyInformation, fetchDownloadMusic};

@@ -15,7 +15,9 @@ const useSearchStore = create((set)=> ({
                 console.error('Error in search artists', err);
             }
         }
-    }
+    },
+
+    clearSearch: () => set({ artists: [] })
 }));
 
 export {useSearchStore};

@@ -1,0 +1,132 @@
+.welcome {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    min-height: 320px;
+    margin: 24px;
+    padding: clamp(28px, 5vw, 56px);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    background:
+        radial-gradient(
+            circle at 85% 30%,
+            rgba(142, 91, 173, 0.28),
+            transparent 35%
+        ),
+        linear-gradient(120deg, #18141f, #292033 65%, #35253f);
+    color: #fff;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    max-width: 620px;
+}
+
+.eyebrow {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #c4acd9;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+}
+
+.content h1 {
+    margin: 0;
+    font-size: clamp(2.3rem, 5vw, 4rem);
+    font-weight: 750;
+    line-height: 1.08;
+    letter-spacing: -0.045em;
+}
+
+.content h1 span {
+    display: block;
+    color: #c4acd9;
+}
+
+.content p {
+    max-width: 440px;
+    margin: 20px 0;
+    color: #c6becd;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.hint {
+    color: #a69aaf;
+    font-size: 0.85rem;
+}
+
+.visual {
+    position: relative;
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 220px;
+    height: 220px;
+}
+
+.disc {
+    display: grid;
+    place-items: center;
+    width: 190px;
+    height: 190px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+    background: repeating-radial-gradient(
+        circle,
+        #302639 0,
+        #302639 3px,
+        #211b29 4px,
+        #211b29 7px
+    );
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.3);
+}
+
+.discCenter {
+    width: 54px;
+    height: 54px;
+    border: 8px solid #b69acb;
+    border-radius: 50%;
+    background: #18141f;
+}
+
+.soundWave {
+    position: absolute;
+    right: -10px;
+    bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 75px;
+    transform: rotate(-8deg);
+}
+
+.soundWave span {
+    width: 5px;
+    max-height: 65px;
+    border-radius: 10px;
+    background: #c4acd9;
+    opacity: 0.9;
+}
+
+@media (max-width: 700px) {
+    .welcome {
+        min-height: auto;
+        margin: 16px;
+        padding: 32px 24px;
+    }
+
+    .visual {
+        display: none;
+    }
+
+    .content h1 {
+        font-size: clamp(2.2rem, 9vw, 3.2rem);
+    }
+}

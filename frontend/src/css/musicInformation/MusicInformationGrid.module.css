@@ -1,0 +1,54 @@
+.trackSection {
+    padding: 28px 36px 40px;
+    background: #121212;
+    color: #fff;
+}
+
+.heading {
+    margin: 0 0 24px;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.tableHeader {
+    display: grid;
+    grid-template-columns: 40px minmax(0, 1fr) 80px;
+    align-items: center;
+    gap: 12px;
+    padding: 0 16px 10px;
+    border-bottom: 1px solid #383838;
+    color: #b3b3b3;
+    font-size: 0.8rem;
+}
+
+.durationHeading {
+    text-align: right;
+}
+
+.trackList {
+    display: flex;
+    flex-direction: column;
+    margin-top: 8px;
+}
+
+.message {
+    padding: 24px 36px;
+    background: #121212;
+    color: #b3b3b3;
+}
+
+@media (max-width: 600px) {
+    .trackSection {
+        padding: 24px 12px;
+    }
+
+    .tableHeader {
+        grid-template-columns: 28px minmax(0, 1fr) 56px;
+        gap: 8px;
+        padding-inline: 8px;
+    }
+
+    .message {
+        padding-inline: 16px;
+    }
+}

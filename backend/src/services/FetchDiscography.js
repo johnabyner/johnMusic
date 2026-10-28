@@ -16,20 +16,38 @@ class FetchDiscography{
                 throw new error('HTTP', response.status);
             }
             const data = await response.json();
-            const dataFiltered = InfoNormalize.filterDiscography(data);
+            const dataDiscography = InfoNormalize.filterDiscography(data);
 
-            return dataFiltered;
+            return dataDiscography;
         }catch(e){
             console.log("ERROR IN FETCH DISCOGRAPHY", e);
             throw e;
         }
     }
+
+    async fetchMusicInformation(idMusic){
+        const url = (`${this.BASE_URL}/album/${idMusic}`);
+
+        try{
+            const response = await fetch(url);
+
+            if(!response.ok){
+                throw new error('HTTP', response.status);
+            }
+
+            const data = await response.json();
+            const discographyHead = InfoNormalize.filterDiscographyHead(data);
+            const discographyBody = InfoNormalize.filterDiscographyBody(data);
+        
+            return [discographyHead, discographyBody]
+        }catch(err){
+            console.log("ERROR IN FETCH MUSIC INFORMATION", err);
+            throw err;
+        }
+    }
 }
 
 export default FetchDiscography; 
-
-//if i need in future, a new font for covers
-//https://coverartarchive.org/release-group/ID_DO_ALBUM
 
 // { ------------------------------------------------------------------
 //   "data": [
