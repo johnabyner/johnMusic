@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
-import { Play, Pause } from "lucide-react";
+import { Play, Pause, Download } from "lucide-react";
 import styles from "@/css/musicInformation/MusicInformationCard.module.css";
+import DownloadService from "@/services/DownloadService";
 
 function formatDuration(seconds) {
     if (typeof seconds !== "number") return "--:--";
@@ -11,7 +12,7 @@ function formatDuration(seconds) {
     return `${minutes}:${String(remainingSeconds).padStart(2, "0")}`;
 }
 
-function MusicInformationCard({ track, index }) {
+function MusicInformationCard({ track, index, artistName }) {
     const audioRef = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
 
@@ -50,17 +51,12 @@ function MusicInformationCard({ track, index }) {
                 >
                     {isPlaying ? <Pause size={18} /> : <Play size={18} />}
                 </button> */}
-                {track.preview ? (
-                    <a
+                <a
                         className={styles.downloadButton}
-                        href={track.preview}
-                        download={`${track.title}.mp3`}
+                        onClick={()=> DownloadService.downloadMusic(track.title, artistName)}
                     >
                         Download music
-                    </a>
-                ) : (
-                    <span className={styles.unavailable}>Unavailable</span>
-                )}
+                </a>
 
                 <div className={styles.trackText}>
                     <p className={styles.trackTitle}>{track.title}</p>

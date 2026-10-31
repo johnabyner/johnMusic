@@ -23,15 +23,15 @@ function MusicInformation(){
 
     const headInformation = musicInformation?.[0];
     const discographyList = musicInformation?.[1];
-    console.log(musicInformation)
 
+    const artistName = headInformation?.artist?.name
     return <>
         <section>
-            <MusicInformationHead headInformation={headInformation}/>
+            <MusicInformationHead headInformation={headInformation} discographyList={discographyList}/>
         </section>
 
         <section>
-            <MusicInformationGrid discographyList={discographyList} />            
+            <MusicInformationGrid discographyList={discographyList} artistName={artistName}/>            
         </section>
     </>
 }

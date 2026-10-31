@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 
 import './css/Global.css';
 
+import { Toaster } from 'sonner';
 import NavBar from './components/NavBar.jsx';
 
 import Home from './pages/Home.jsx';
@@ -14,6 +15,8 @@ function App() {
 
   return (
     <>
+        <Toaster position="bottom-right" richColors theme="dark"/>
+
         <NavBar/>
 
         <main className='main-content'>

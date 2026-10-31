@@ -1,7 +1,7 @@
 import MusicInformationCard from "./MusicInformationCard";
 import styles from "@/css/musicInformation/MusicInformationGrid.module.css";
 
-function MusicInformationGrid({ discographyList }) {
+function MusicInformationGrid({ discographyList, artistName}) {
     if (!discographyList) {
         return <p className={styles.message}>Loading tracks...</p>;
     }
@@ -9,7 +9,6 @@ function MusicInformationGrid({ discographyList }) {
     if (discographyList.length === 0) {
         return <p className={styles.message}>No tracks found.</p>;
     }
-
     return (
         <section className={styles.trackSection}>
             <h2 className={styles.heading}>Tracks</h2>
@@ -26,6 +25,7 @@ function MusicInformationGrid({ discographyList }) {
                         key={track.id}
                         track={track}
                         index={index}
+                        artistName={artistName}
                     />
                 ))}
             </div>

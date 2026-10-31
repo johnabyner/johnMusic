@@ -1,6 +1,7 @@
 import styles from "@/css/musicInformation/MusicInformationHead.module.css";
+import DownloadService from "@/services/DownloadService.js";
 
-function MusicInformationHead({ headInformation }) {
+function MusicInformationHead({ headInformation, discographyList }) {
     if (!headInformation) {
         return <p className={styles.loading}>Loading album...</p>;
     }
@@ -70,6 +71,7 @@ function MusicInformationHead({ headInformation }) {
                 <button
                     className={styles.albumButton}
                     type="button"
+                    onClick={()=>DownloadService.downloadAlbum(discographyList, headInformation.artist.name)}
                 >
                     Download album
                 </button>

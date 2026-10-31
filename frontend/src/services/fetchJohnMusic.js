@@ -19,8 +19,20 @@ async function fetchDiscographyInformation(musicId){
     return data;
 }
 
-async function fetchDownloadMusic(){
-    return;
+async function fetchDownloadMusic(title, artist){
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/johnMusic/downloadMusic`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            title: title,
+            artist: artist,
+        })
+    });
+    const data = await response.json();
+    
+    return data;
 }
 
 export {fetchArtists, fetchProfileArtist, fetchDiscographyInformation, fetchDownloadMusic};

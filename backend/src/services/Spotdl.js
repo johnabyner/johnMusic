@@ -45,7 +45,7 @@ class Spotdl{
 
         const outputAudio = path.join(
             outputPath,
-            '{list-name}',
+            '{album}',
             '{title}-{artist}'
         );
 

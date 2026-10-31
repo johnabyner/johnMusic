@@ -8,11 +8,11 @@ async function downloadController(req, res) {
     try {
         const musicDir = path.join(os.homedir(), 'johnmusic');
         const filePath = await DownloadMusic.download(title, artist, musicDir);
-
-        res.status(200).json({message: 'sucesseful in download music'})
+        
+        return res.status(200).json({message: 'Music downloaded successfully'});
     } catch (err) {
         console.log("Error in download music", err);
-        res.status(500).json({error: err.message})
+        res.status(500).json({error: 'Error in download music'})
     }
 }
 
